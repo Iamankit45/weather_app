@@ -1,0 +1,20 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "this is for express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ankit",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "export": "^0.1.337",
+    "exports": "^0.0.1",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "requests": "^0.3.0",
+    "require": "^2.4.20"
+  }
+}

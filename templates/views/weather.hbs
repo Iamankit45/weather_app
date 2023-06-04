@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="style.css"> 
+
+
+    <title>WEATHER</title>
+
+
+
+</head>
+<body>
+
+{{>header}}
+
+    <div class="option">
+<h1>Enter the city you want to know the weather</h1>
+
+<form class="formm" >
+<input type="text" class ="city" name ="city" id ="city" ></input>
+<button class ="btn" id ="btn"  type="submit"> ok</button>
+</form>
+<div id="v">
+    <h1>value is </h1>
+</div>
+    </div>
+
+    <div class="box">
+<div class ="wave -one "></div>
+<div class="wave -two"></div>
+<div class="wave -three"></div>
+   
+<div id =weathercon>
+
+    <i class="fas fa-sun" style="color: rgb(255, 97, 53)"></i>
+  
+</div>
+<div class="info">
+    {{!-- <h2 class="location"><i class="fas fa-street-view"></i></h2> --}}
+    <h2 class="location" id="location">city name here</h2>
+<p id="date"> thu| DEC 7 | 7:26 PM </p>
+<h1 class="temp" id="tempe"> &deg;C</h1>
+<h3 class="tempmin_max" id="tempmin_max">Min  &deg;C| Max  &deg;C</h3>
+
+</div>
+
+</div>
+
+
+<script src="index1.js"></script>
+
+<script>
+const curDate =document.getElementById("date");
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    const getCurrentDay = ()=>{
+    let currentTime=new Date();
+    var d=(days[currentTime.getDay()]);
+    
+    var month=currentTime.getMonth();
+    var m=(months[month]);
+    
+    var date =currentTime.getDate();
+    
+    
+    var hrs =currentTime.getHours();
+    var har;
+    if (hrs>12) {
+        har =hrs-12;
+    } else {
+        har=hrs;
+    }
+    
+    
+    var min=currentTime.getMinutes();
+    
+    
+    var a;
+    
+    if (hrs>=12) {
+        a=(d+ " | " + m + " "+date + " | "+ har +":"+ min  +" PM");
+    } else {
+        a=(d+ " | " + m + " "+date + " | "+ har +":"+ min  +" AM");
+    }
+    return a
+    };
+
+    curDate.innerHTML=getCurrentDay();
+</script>
+
+
+
+{{>footer}}
+</body>
+</html>
